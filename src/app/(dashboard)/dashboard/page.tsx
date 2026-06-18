@@ -18,37 +18,39 @@ export default function DashboardPage() {
   }, [])
 
   return (
-    <div className="mx-auto max-w-[1280px] space-y-8">
-      {/* Page header */}
+    <div className="mx-auto max-w-[1280px]">
+      {/* Page header — more vertical air so the greeting breathes */}
       <motion.div
-        initial={{ opacity: 0, y: -10 }}
+        initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="mb-10"
       >
-        <h1 className="text-[22px] font-semibold tracking-tight text-foreground mb-1">
+        <h1 className="text-[24px] font-semibold tracking-tight text-foreground mb-1.5">
           Welcome back, Sarah 👋
         </h1>
-        <p className="text-[14px] text-muted-foreground">
+        <p className="text-[14px] text-muted-foreground leading-relaxed">
           Here&apos;s what&apos;s happening across your products.
         </p>
       </motion.div>
 
       {/* Metrics */}
-      <MetricsRow loading={loading} />
+      <div className="mb-10">
+        <MetricsRow loading={loading} />
+      </div>
 
       {/* AI Insights */}
-      <AiInsights loading={loading} />
+      <div className="mb-10">
+        <AiInsights loading={loading} />
+      </div>
 
-      {/* Main two-column grid */}
-      <div className="grid grid-cols-1 xl:grid-cols-[1fr_340px] gap-6">
-        {/* Left column */}
-        <div className="space-y-6">
+      {/* Main two-column grid — wider gap, columns breathe */}
+      <div className="grid grid-cols-1 xl:grid-cols-[1fr_336px] gap-8">
+        <div className="space-y-8">
           <ActiveProjects loading={loading} />
           <RecentDocuments loading={loading} />
         </div>
-
-        {/* Right column */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           <UpcomingReleases loading={loading} />
           <RecentActivity loading={loading} />
         </div>

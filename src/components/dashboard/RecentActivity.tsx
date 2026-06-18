@@ -32,12 +32,6 @@ const activities = [
   },
 ]
 
-const actionColor: Record<string, string> = {
-  updated: "text-blue-600",
-  completed: "text-emerald-600",
-  "commented on": "text-amber-600",
-}
-
 interface RecentActivityProps {
   loading?: boolean
 }
@@ -46,16 +40,16 @@ export function RecentActivity({ loading }: RecentActivityProps) {
   return (
     <section>
       <div className="flex items-center gap-2 mb-4">
-        <Activity className="h-4 w-4 text-muted-foreground" strokeWidth={1.8} />
+        <Activity className="h-4 w-4 text-muted-foreground" strokeWidth={1.7} />
         <h2 className="text-[15px] font-semibold text-foreground">Recent Activity</h2>
       </div>
 
-      <div className="rounded-[12px] border border-border bg-card overflow-hidden">
+      <div className="rounded-[12px] border border-border bg-card overflow-hidden shadow-[0_1px_4px_oklch(0_0_0/0.05)]">
         {loading
           ? Array.from({ length: 3 }).map((_, i) => (
               <div
                 key={i}
-                className={`flex items-center gap-3 px-4 py-3.5 ${i < 2 ? "border-b border-border" : ""}`}
+                className={`flex items-center gap-3 px-4 py-4 ${i < 2 ? "border-b border-border" : ""}`}
               >
                 <Skeleton className="h-7 w-7 rounded-full shrink-0" />
                 <Skeleton className="h-4 flex-1" />
@@ -65,11 +59,11 @@ export function RecentActivity({ loading }: RecentActivityProps) {
           : activities.map((activity, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -8 }}
+                initial={{ opacity: 0, x: -6 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.07, duration: 0.28, ease: "easeOut" }}
-                whileHover={{ backgroundColor: "oklch(0.97 0.005 265)" }}
-                className={`flex items-center gap-3 px-4 py-3.5 transition-colors duration-150 ${
+                whileHover={{ backgroundColor: "oklch(0.975 0.006 280)" }}
+                className={`flex items-center gap-3 px-4 py-4 transition-colors duration-150 ${
                   i < activities.length - 1 ? "border-b border-border" : ""
                 }`}
               >
@@ -80,14 +74,17 @@ export function RecentActivity({ loading }: RecentActivityProps) {
                     {activity.initials}
                   </AvatarFallback>
                 </Avatar>
-                <p className="flex-1 text-[13px] text-foreground/80 min-w-0">
-                  <span className="font-medium text-foreground">{activity.user}</span>{" "}
-                  <span className={`font-medium ${actionColor[activity.action] ?? ""}`}>
-                    {activity.action}
-                  </span>{" "}
+
+                {/* Flat prose — names bold, action and target in neutral grey */}
+                <p className="flex-1 text-[13px] leading-snug min-w-0">
+                  <span className="font-medium text-foreground">{activity.user}</span>
+                  <span className="text-muted-foreground"> {activity.action} </span>
                   <span className="font-medium text-foreground">{activity.target}</span>
                 </p>
-                <span className="text-[11px] text-muted-foreground shrink-0">{activity.time}</span>
+
+                <span className="text-[11px] text-muted-foreground/70 shrink-0 tabular-nums">
+                  {activity.time}
+                </span>
               </motion.div>
             ))}
       </div>
