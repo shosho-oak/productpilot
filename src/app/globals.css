@@ -116,4 +116,10 @@
     background-color: oklch(0.88 0.006 265);
     border-radius: 9999px;
   }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
 }
