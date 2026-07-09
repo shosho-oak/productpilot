@@ -35,13 +35,13 @@ export function TopBar() {
         {/* Avatar */}
         <div className="flex items-center gap-2.5 cursor-pointer group">
           <Avatar className="h-7 w-7 ring-2 ring-transparent group-hover:ring-primary/30 transition-all duration-150">
-            <AvatarImage src="" alt="Sarah Chen" />
+            <AvatarImage src="" alt="Shahad Qumosani" />
             <AvatarFallback className="bg-gradient-to-br from-violet-400 to-purple-600 text-white text-[11px] font-semibold">
-              SC
+              SQ
             </AvatarFallback>
           </Avatar>
           <div className="hidden md:block">
-            <p className="text-[13px] font-medium text-foreground leading-none">Sarah Chen</p>
+            <p className="text-[13px] font-medium text-foreground leading-none">Shahad Qumosani</p>
           </div>
         </div>
       </div>

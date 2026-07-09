@@ -82,7 +82,7 @@ export function Sidebar() {
         <div className="flex items-center gap-2.5">
           <div className="h-6 w-6 rounded-full bg-gradient-to-br from-violet-400 to-purple-600 shrink-0" />
           <div className="min-w-0">
-            <p className="text-[12px] font-medium text-foreground truncate">Sarah Chen</p>
+            <p className="text-[12px] font-medium text-foreground truncate">Shahad Qumosani</p>
             <p className="text-[11px] text-muted-foreground truncate">Pro Plan</p>
           </div>
         </div>
