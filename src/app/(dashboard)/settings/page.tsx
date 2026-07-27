@@ -338,7 +338,7 @@ export default function SettingsPage() {
   function scrollTo(id: string) {
     const el = document.getElementById(id)
     if (!el || !contentRef.current) return
-    const offset = el.offsetTop - 24
+    const offset = el.offsetTop - 140
     contentRef.current.scrollTo({ top: offset, behavior: "smooth" })
   }
 
