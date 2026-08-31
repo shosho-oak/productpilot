@@ -6,7 +6,7 @@
 
 Plan roadmaps • Prioritize backlogs • Collaborate with your team • Generate AI-powered product artifacts
 
-[Live Demo](YOUR_VERCEL_URL) · [GitHub](https://github.com/shosho-oak/productpilot)
+[Live Demo](https://productpilot-4a8vmzfq3-shosho-oaks-projects.vercel.app/dashboard) · [GitHub](https://github.com/shosho-oak/productpilot)
 
 </div>
 
