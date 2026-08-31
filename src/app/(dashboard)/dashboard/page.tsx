@@ -27,7 +27,7 @@ export default function DashboardPage() {
         className="mb-10"
       >
         <h1 className="text-[24px] font-semibold tracking-tight text-foreground mb-1.5">
-          Welcome back, Sarah 👋
+          Welcome back, Shahad 👋
         </h1>
         <p className="text-[14px] text-muted-foreground leading-relaxed">
           Here&apos;s what&apos;s happening across your products.
